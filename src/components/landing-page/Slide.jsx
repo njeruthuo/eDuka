@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import data from "../../data";
+import { Link } from "react-router-dom";
 
 let Slide = function () {
   const [selected, setSelected] = useState(1);
   const [typedText, setTypedText] = useState("");
-  let slide = data.find((item) => item.id === selected);
+  let slide = data.slides.find((item) => item.id === selected);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -56,7 +57,7 @@ let Slide = function () {
         &gt;
       </span>
       <button className="absolute top-[50%] left-[40%] right-[40%] getStarted px-8 py-2 text-white font-bold rounded-[50px] hover:translate-y-1">
-        Start Shopping
+        <Link to={'/products'}>Start Shopping</Link>
       </button>
 
       <div

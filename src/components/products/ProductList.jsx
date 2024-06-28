@@ -1,6 +1,9 @@
 import data from "../../data";
+import { useState } from "react";
 
 const ProductList = () => {
+  const [products, setProducts] = useState(data.data);
+
   const getUniqueCategories = (data) => {
     const categories = new Set();
     data.forEach((item) => {
@@ -8,18 +11,31 @@ const ProductList = () => {
     });
     return Array.from(categories);
   };
+  const uniqueCategories = getUniqueCategories(products);
 
-  const uniqueCategories = getUniqueCategories(data.data);
+  const filterCategory = (category) => {
+    let select = products.filter((product) => product.category === category);
+    setProducts(select);
+  };
+
+  function resetAll() {
+    setProducts(data.data);
+  }
 
   return (
     <div className="flex flex-col sm:flex-row mt-4">
       <div className="hidden sm:block w-1/4 sm:pl-6">
-        <div className="sticky top-[56px]">
+        <div className="sticky top-[60px]">
           <h2 className="font-bold text-lg">Categories</h2>
           <div id="categories">
             <ul className="flex flex-col space-y-4 mt-4">
+              <li onClick={resetAll}>All</li>
               {uniqueCategories.map((category) => {
-                return <li key={category}>{category}</li>;
+                return (
+                  <li onClick={() => filterCategory(category)} key={category}>
+                    {category}
+                  </li>
+                );
               })}
             </ul>
           </div>
@@ -30,11 +46,11 @@ const ProductList = () => {
         <div className="mt-4">
           <div className="container mx-auto">
             <div className="flex flex-wrap">
-              {data.data.map((item) => {
+              {products.map((item) => {
                 const { id, img, name, price } = item;
                 return (
                   <div
-                    className="w-full sm:w-1/2 lg:w-1/3 p-4 hover:cursor-pointer"
+                    className="w-full sm:w-1/2 lg:w-1/3 p-4 hover:cursor-pointer rounded-xl"
                     key={id}
                   >
                     <div className="bg-gray-200 p-2">

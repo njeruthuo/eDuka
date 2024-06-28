@@ -6,9 +6,9 @@ export default function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/x" element={<Landing />} />
-        <Route path="/details" element={<Product />} />
-        <Route path="/" element={<ProductList />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/details/:id" element={<Product />} />
+        <Route path="/products" element={<ProductList />} />
       </Routes>
     </>
   );
