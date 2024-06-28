@@ -13,7 +13,7 @@ const ProductList = () => {
 
   return (
     <div className="flex flex-col sm:flex-row mt-4">
-      <div className="hidden sm:block w-1/3 sm:pl-6">
+      <div className="hidden sm:block w-1/4 sm:pl-6">
         <div className="sticky top-[56px]">
           <h2 className="font-bold text-lg">Categories</h2>
           <div id="categories">
@@ -25,7 +25,7 @@ const ProductList = () => {
           </div>
         </div>
       </div>
-      <div className="sm:w-2/3 w-auto">
+      <div className="sm:w-3/4 w-auto">
         <h2 className="pl-4 font-bold text-lg">Products</h2>
         <div className="mt-4">
           <div className="container mx-auto">
