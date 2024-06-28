@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-text {
+  background: linear-gradient(104deg, rgba(131,58,180,1) 29%, rgba(253,29,29,1) 55%, rgba(252,176,69,1) 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  @apply text-2xl font-bold
+}
+
+.logo-text {
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  @apply font-bold
+}
+
+
+span {
+  @apply hover:cursor-pointer hover:bg-slate-200 px-6 py-4 rounded-lg border hover:text-red-600 font-bold hover:border-red-600;
+}
+
+h1 {
+  font-family: "Playwrite AU SA", cursive;
+  font-optical-sizing: auto;
+  font-weight: "400";
+  font-style: normal;
+  @apply font-bold text-black hover:cursor-pointer hover:text-blue-500 my-4;
+}
+
+.items {
+  @apply hidden sm:block my-4 text-white hover:cursor-pointer hover:text-blue-500;
+}
+
+.landing-page {
+  min-height: calc(100vh - 60px);
+}
+
+#bars p{
+  @apply hover:cursor-pointer text-red-400
+}
