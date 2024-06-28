@@ -5,23 +5,41 @@
 @tailwind utilities;
 
 .gradient-text {
-  background: linear-gradient(104deg, rgba(131,58,180,1) 29%, rgba(253,29,29,1) 55%, rgba(252,176,69,1) 74%);
+  background: linear-gradient(
+    104deg,
+    rgba(131, 58, 180, 1) 29%,
+    rgba(253, 29, 29, 1) 55%,
+    rgba(252, 176, 69, 1) 74%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  @apply text-2xl font-bold
+  @apply text-2xl font-bold;
 }
 
 .logo-text {
-  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  @apply font-bold
+  @apply font-bold;
 }
 
+.getStarted {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    104deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
 
 span {
   @apply hover:cursor-pointer hover:bg-slate-200 px-6 py-4 rounded-lg border hover:text-red-600 font-bold hover:border-red-600;
@@ -43,6 +61,9 @@ h1 {
   min-height: calc(100vh - 60px);
 }
 
-#bars p{
-  @apply hover:cursor-pointer text-red-400
+#bars p {
+  @apply hover:cursor-pointer text-red-400;
+}
+#categories li {
+  @apply hover:cursor-pointer w-[152px] py-2;
 }

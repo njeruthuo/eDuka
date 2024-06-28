@@ -46,12 +46,18 @@ let Slide = function () {
         {typedText}
       </p>
 
-      <span onClick={previous} className="absolute top-[50%] left-4 text-blue-700">
+      <span
+        onClick={previous}
+        className="absolute top-[50%] left-4 text-blue-700"
+      >
         &lt;
       </span>
       <span onClick={next} className="absolute top-[50%] right-4 text-blue-700">
         &gt;
       </span>
+      <button className="absolute top-[50%] left-[40%] right-[40%] getStarted px-8 py-2 text-white font-bold rounded-[50px] hover:translate-y-1">
+        Start Shopping
+      </button>
 
       <div
         id="bars"
