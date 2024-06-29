@@ -53,12 +53,12 @@ h1 {
   @apply font-bold text-black hover:cursor-pointer hover:text-blue-500 my-4;
 }
 
-.itemss {
-  @apply hidden sm:block my-4 text-white hover:cursor-pointer hover:text-blue-500;
+.items {
+  @apply hover:cursor-pointer;
 }
 
 .landing-page {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 63px);
 }
 
 #bars p {
@@ -66,4 +66,8 @@ h1 {
 }
 #categories li {
   @apply hover:cursor-pointer w-[152px] py-2;
+}
+
+#quantity button{
+  @apply bg-orange-400 text-white px-6 py-2 rounded-lg hover:bg-orange-300
 }

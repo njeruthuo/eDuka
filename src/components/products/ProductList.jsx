@@ -1,8 +1,14 @@
+import { Link } from "react-router-dom";
 import data from "../../data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ProductList = () => {
   const [products, setProducts] = useState(data.data);
+  const [uniqueCategories, setUniqueCategories] = useState([]);
+
+  useEffect(() => {
+    setUniqueCategories(getUniqueCategories(data.data));
+  }, []);
 
   const getUniqueCategories = (data) => {
     const categories = new Set();
@@ -11,11 +17,14 @@ const ProductList = () => {
     });
     return Array.from(categories);
   };
-  const uniqueCategories = getUniqueCategories(products);
 
   const filterCategory = (category) => {
-    let select = products.filter((product) => product.category === category);
-    setProducts(select);
+    if (category === "All") {
+      setProducts(data.data);
+    } else {
+      let select = data.data.filter((product) => product.category === category);
+      setProducts(select);
+    }
   };
 
   function resetAll() {
@@ -53,11 +62,15 @@ const ProductList = () => {
                     className="w-full sm:w-1/2 lg:w-1/3 p-4 hover:cursor-pointer rounded-xl"
                     key={id}
                   >
-                    <div className="bg-gray-200 p-2">
-                      <img className="h-36 w-full" src={img} alt={name} />
-                      <h2 className="text-gray-700 text-sm my-2">{name}</h2>
-                      <p className="text-gray-500 text-xs">${price}</p>
-                    </div>
+                    <Link to={`/details/${id}/${name}`}>
+                      <div className="bg-gray-200 p-2">
+                        <img className="h-36 w-full" src={img} alt={name} />
+                        <h2 className="text-gray-700 text-sm my-2">{name}</h2>
+                        <p className="text-gray-500 text-xs">
+                          ${price.toFixed(2)}
+                        </p>
+                      </div>
+                    </Link>
                   </div>
                 );
               })}
