@@ -58,7 +58,7 @@ h1 {
 }
 
 .landing-page {
-  min-height: calc(100vh - 63px);
+  min-height: calc(100vh - 65px);
 }
 
 #bars p {
